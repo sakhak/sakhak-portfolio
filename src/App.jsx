@@ -37,7 +37,7 @@ function App() {
         <Contact />
       </main>
 
-      <footer className="bg-dark text-white py-8 text-center">
+      <footer className="bg-dark text-white py-3 text-center ">
         <p>© 2024 Loeung SakHak. All rights reserved.</p>
       </footer>
     </>

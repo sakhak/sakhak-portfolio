@@ -10,7 +10,7 @@ const Portfolio = () => {
         description:
           "Full-stack web app with authentication, profiles, and job search by categories, location, and skills.",
         technologies: ["React", "TypeScript", "Laravel", "MySQL"],
-        image: "/img/JobDone.jpg",
+        image: "../../public/img/photo_2025-06-28_13-10-20.jpg",
         live: "#",
         github: "#",
       },
@@ -29,6 +29,15 @@ const Portfolio = () => {
           "Web app to manage employee records with full CRUD, using arrays + localStorage for persistence.",
         technologies: ["HTML", "CSS", "JavaScript"],
         image: "/img/CrudSystem.jpg",
+        live: "#",
+        github: "#",
+      },
+      {
+        title: "Login UI Project",
+        description:
+          "Login form with validation, show/hide password, and basic error handling for a smooth UX.",
+        technologies: ["HTML", "CSS", "JavaScript"],
+        image: "/img/LoginForm.jpg",
         live: "#",
         github: "#",
       },
@@ -141,7 +150,6 @@ const Portfolio = () => {
 
             <div className="mt-8 divider" />
 
-            {/* Thumbnails */}
             <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
               {projects.map((p, idx) => (
                 <button
@@ -169,7 +177,6 @@ const Portfolio = () => {
             </div>
           </motion.div>
 
-          {/* Right image (animated switch) */}
           <motion.div variants={fadeUp(0.08)} className="card overflow-hidden">
             <div className="relative">
               <AnimatePresence mode="wait">

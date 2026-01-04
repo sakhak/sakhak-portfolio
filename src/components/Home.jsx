@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Home = () => {
   const roles = useMemo(
@@ -71,10 +71,6 @@ const Home = () => {
       <div className="absolute -bottom-48 -right-48 w-[36rem] h-[36rem] rounded-full bg-primary/10 blur-3xl -z-10" />
 
       <div className="container mx-auto px-4 md:px-8">
-        {/* Make laptop layout more premium:
-            - bigger gap on lg
-            - align content a bit higher
-        */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* LEFT */}
           <motion.div
@@ -93,7 +89,6 @@ const Home = () => {
               </div>
             </motion.div>
 
-            {/* Big headline (better on laptop) */}
             <motion.h1
               variants={item}
               className="mt-6 font-extrabold tracking-tight text-gray-900 leading-[1.02]
@@ -103,7 +98,6 @@ const Home = () => {
               <span className="block text-gray-900">Loeung</span>
             </motion.h1>
 
-            {/* Subtitle */}
             <motion.p
               variants={item}
               className="mt-5 text-base md:text-lg text-gray-600 max-w-xl mx-auto lg:mx-0 leading-relaxed"
@@ -115,7 +109,7 @@ const Home = () => {
             {/* Typewriter */}
             <motion.div variants={item} className="mt-7">
               <div className="text-gray-700 text-lg md:text-xl">
-                I’m a{" "}
+                I'm a{" "}
                 <span className="relative inline-flex items-center font-semibold text-primary">
                   {text}
                   <span className="ml-1 inline-block h-6 w-[2px] bg-primary/80 animate-pulse" />
@@ -126,13 +120,12 @@ const Home = () => {
               </div>
             </motion.div>
 
-            {/* CTA */}
             <motion.div
               variants={item}
               className="mt-8 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"
             >
               <a
-                href="/SAKHAK LOEUNG CV2.pdf"
+                href="/public/img/sakhakloeung.png"
                 download
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-white font-semibold shadow-lg shadow-primary/20 hover:brightness-110 active:scale-[0.99] transition"
               >
@@ -145,11 +138,10 @@ const Home = () => {
                 className="inline-flex items-center justify-center rounded-xl border border-gray-200 bg-white/70 backdrop-blur px-6 py-3 text-gray-800 font-semibold shadow-sm hover:bg-white transition"
               >
                 <i className="bx bx-paper-plane mr-2 text-xl" />
-                Let’s Talk
+                Let's Talk
               </a>
             </motion.div>
 
-            {/* Social */}
             <motion.div variants={item} className="mt-8">
               <p className="text-sm text-gray-500 mb-3">Connect with me:</p>
               <div className="flex justify-center lg:justify-start gap-4">
@@ -212,7 +204,6 @@ const Home = () => {
             </motion.div>
           </motion.div>
 
-          {/* RIGHT */}
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
@@ -220,7 +211,6 @@ const Home = () => {
             className="lg:col-span-5 flex justify-center lg:justify-end"
           >
             <div className="relative w-full max-w-[26rem] lg:max-w-[30rem]">
-              {/* Big card shell (better on laptop than circle) */}
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{
@@ -230,10 +220,9 @@ const Home = () => {
                 }}
                 className="relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white/60 backdrop-blur shadow-2xl"
               >
-                {/* Image area */}
                 <div className="relative h-[22rem] sm:h-[26rem] lg:h-[30rem]">
                   <img
-                    src="/img/IMG_5438.png"
+                    src="../../public/img/sakhakloeung.png"
                     alt="SakHak Profile"
                     className="w-full h-full object-cover"
                     loading="eager"
