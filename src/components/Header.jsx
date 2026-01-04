@@ -59,7 +59,6 @@ const Header = () => {
           </span>
         </a>
 
-        {/* Desktop */}
         <nav className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
             <a

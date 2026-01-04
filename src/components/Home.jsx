@@ -125,7 +125,7 @@ const Home = () => {
               className="mt-8 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"
             >
               <a
-                href="/public/img/sakhakloeung.png"
+                href="img/SAKHAK LOEUNG CV2.pdf"
                 download
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-white font-semibold shadow-lg shadow-primary/20 hover:brightness-110 active:scale-[0.99] transition"
               >
@@ -222,7 +222,7 @@ const Home = () => {
               >
                 <div className="relative h-[22rem] sm:h-[26rem] lg:h-[30rem]">
                   <img
-                    src="../../public/img/sakhakloeung.png"
+                    src="/img/sakhakloeung.png"
                     alt="SakHak Profile"
                     className="w-full h-full object-cover"
                     loading="eager"
