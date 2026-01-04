@@ -1,6 +1,8 @@
 import React, { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeUp, stagger } from "../utils/motion";
+import { FaMapMarkerAlt, FaPhoneAlt, FaTelegramPlane } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,28 +16,28 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(null); // { type, message }
 
-  const contactDetails = useMemo(
-    () => [
-      { icon: "bx bxs-phone", title: "Phone", value: "(+855) 016 607 238" },
-      {
-        icon: "fa-brands fa-telegram",
-        title: "Telegram",
-        value: "(+855) 962 619 282",
-      },
-      {
-        icon: "bx bxl-gmail",
-        title: "Email",
-        value: "loeungsakhak438@gmail.com",
-      },
-      {
-        icon: "bx bx-map",
-        title: "Address",
-        value:
-          "#F37k, Sangkat Kakab 2, Por Sen Chey District, Phnom Penh, Cambodia",
-      },
-    ],
-    []
-  );
+  const contactDetails = [
+    {
+      icon: FaPhoneAlt,
+      title: "Phone",
+      value: "(+855) 016 607 238",
+    },
+    {
+      icon: FaTelegramPlane,
+      title: "Telegram",
+      value: "(+855) 016 607 238",
+    },
+    {
+      icon: MdEmail,
+      title: "Email",
+      value: "loeungsakhak438@gmail.com",
+    },
+    {
+      icon: FaMapMarkerAlt,
+      title: "Address",
+      value: "Phnom Penh, Cambodia",
+    },
+  ];
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -117,7 +119,7 @@ const Contact = () => {
                 {contactDetails.map((d) => (
                   <div key={d.title} className="flex items-start gap-4">
                     <div className="h-12 w-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
-                      <i className={`${d.icon} text-2xl`} />
+                      <d.icon className="text-2xl" />
                     </div>
                     <div>
                       <div className="font-bold text-gray-900">{d.title}</div>

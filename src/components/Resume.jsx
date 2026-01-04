@@ -1,6 +1,22 @@
 import React, { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeUp, stagger } from "../utils/motion";
+import {
+  FaCode,
+  FaCss3Alt,
+  FaDatabase,
+  FaHtml5,
+  FaJs,
+  FaLaravel,
+  FaPhp,
+  FaReact,
+} from "react-icons/fa";
+import {
+  SiAdobeaftereffects,
+  SiAdobeillustrator,
+  SiAdobephotoshop,
+  SiAdobepremierepro,
+} from "react-icons/si";
 
 const Resume = () => {
   const [activeTab, setActiveTab] = useState("experience");
@@ -14,18 +30,18 @@ const Resume = () => {
 
   const skills = useMemo(
     () => [
-      { icon: "bx bxl-html5", name: "HTML" },
-      { icon: "bx bxl-css3", name: "CSS" },
-      { icon: "bx bxl-javascript", name: "JavaScript" },
-      { icon: "bx bxl-react", name: "React" },
-      { icon: "bx bxl-php", name: "PHP" },
-      { icon: "fa-brands fa-laravel", name: "Laravel" },
-      { icon: "fa-solid fa-database", name: "SQL" },
-      { icon: "bx bxl-c-plus-plus", name: "C#" },
-      { icon: "bx bxl-adobe", name: "Photoshop" },
-      { icon: "bx bxl-adobe", name: "Illustrator" },
-      { icon: "bx bxl-adobe", name: "Premiere Pro" },
-      { icon: "bx bxl-adobe", name: "After Effects" },
+      { icon: FaHtml5, name: "HTML" },
+      { icon: FaCss3Alt, name: "CSS" },
+      { icon: FaJs, name: "JavaScript" },
+      { icon: FaReact, name: "React" },
+      { icon: FaPhp, name: "PHP" },
+      { icon: FaLaravel, name: "Laravel" },
+      { icon: FaDatabase, name: "SQL" },
+      { icon: FaCode, name: "C#" },
+      { icon: SiAdobephotoshop, name: "Photoshop" },
+      { icon: SiAdobeillustrator, name: "Illustrator" },
+      { icon: SiAdobepremierepro, name: "Premiere Pro" },
+      { icon: SiAdobeaftereffects, name: "After Effects" },
     ],
     []
   );
@@ -215,7 +231,7 @@ const Resume = () => {
                           className="card p-4 flex items-center gap-3"
                         >
                           <div className="h-11 w-11 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
-                            <i className={`${s.icon} text-2xl`} />
+                            <s.icon className="text-2xl" />
                           </div>
                           <div className="font-semibold text-gray-900">
                             {s.name}

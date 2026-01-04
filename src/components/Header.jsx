@@ -17,6 +17,7 @@ const Header = () => {
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
     if (!el) return;
+    setActiveSection(id);
     el.scrollIntoView({ behavior: "smooth", block: "start" });
     setMenuOpen(false);
   };
