@@ -1,0 +1,76 @@
+/* 1️⃣ All imports at the very top */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css");
+/* @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"); */
+
+/* 2️⃣ Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 3️⃣ Custom styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: theme("fontFamily.sans");
+    color: #212529;
+    background-color: #f8f9fa;
+  }
+
+@layer components {
+  .container-app {
+    @apply container mx-auto px-4 md:px-8;
+  }
+
+  .section {
+    @apply relative py-16 md:py-24;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900;
+  }
+  .section-subtitle {
+    @apply mt-3 text-gray-600 text-base md:text-lg max-w-2xl;
+  }
+
+  .card {
+    @apply rounded-2xl border border-gray-200 bg-white/70 backdrop-blur shadow-sm;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 font-semibold transition active:scale-[0.99];
+  }
+  .btn-primary {
+    @apply btn bg-primary text-white shadow-lg shadow-primary/20 hover:brightness-110;
+  }
+  .btn-outline {
+    @apply btn border border-gray-200 bg-white/70 text-gray-900 hover:bg-white shadow-sm;
+  }
+  .btn-soft {
+    @apply btn bg-primary/10 text-primary hover:bg-primary/15;
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-gray-200 bg-white/70 px-4 py-3 text-gray-900
+    outline-none transition focus:border-primary focus:ring-4 focus:ring-primary/15;
+  }
+
+  .navlink {
+    @apply px-3 py-2 rounded-xl text-sm font-medium text-gray-700 hover:text-primary hover:bg-primary/5 transition;
+  }
+  .navlink-active {
+    @apply text-primary bg-primary/10;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white/70 px-4 py-2 shadow-sm;
+  }
+
+  .divider {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-gray-200 to-transparent;
+  }
+}
+}
