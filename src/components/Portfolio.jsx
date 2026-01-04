@@ -10,7 +10,7 @@ const Portfolio = () => {
         description:
           "Full-stack web app with authentication, profiles, and job search by categories, location, and skills.",
         technologies: ["React", "TypeScript", "Laravel", "MySQL"],
-        image: "../../public/img/photo_2025-06-28_13-10-20.jpg",
+        image: "img/photo_2025-06-28_13-10-20.jpg",
         live: "#",
         github: "#",
       },
