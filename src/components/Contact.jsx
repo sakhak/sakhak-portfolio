@@ -1,7 +1,9 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeUp, stagger } from "../utils/motion";
 import { FaMapMarkerAlt, FaPhoneAlt, FaTelegramPlane } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
+
 import { MdEmail } from "react-icons/md";
 
 const Contact = () => {
@@ -50,21 +52,37 @@ const Contact = () => {
     setStatus(null);
 
     try {
-      await new Promise((r) => setTimeout(r, 1200));
-      console.log("Form submitted:", formData);
+      await emailjs.send(
+        "service_00emrq7", // YOUR SERVICE ID
+        "template_or5cb8j", // YOUR TEMPLATE ID
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        "VTXcwdOQSIsNfvX84" // YOUR PUBLIC KEY
+      );
 
       setStatus({
         type: "success",
         message: "Message sent successfully. I’ll reply soon!",
       });
-      setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
-      setTimeout(() => setStatus(null), 3500);
-    } catch {
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error(error);
       setStatus({
         type: "error",
-        message: "Something went wrong. Please try again.",
+        message: "Failed to send message. Please try again.",
       });
-      setTimeout(() => setStatus(null), 3500);
     } finally {
       setLoading(false);
     }
