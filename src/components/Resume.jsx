@@ -170,6 +170,7 @@ const Resume = () => {
                           "Built multiple front-end and full-stack projects",
                           "CRUD systems and reusable UI components",
                           "Job search platform using React + Laravel + MySQL",
+                          "Built a secure user management module with Laravel Sanctum authentication, React protected routes, user profile handling, and role assignment for school administration workflows",
                         ]}
                       />
                     </div>

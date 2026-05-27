@@ -60,7 +60,7 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen pt-20 md:pt-24 flex items-center overflow-hidden"
+      className="relative min-h-[100svh] pt-20 md:pt-20 lg:pt-16 lg:pb-10 flex items-center overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white via-white to-gray-50" />
@@ -70,8 +70,8 @@ const Home = () => {
       <div className="absolute -bottom-48 -left-48 w-[36rem] h-[36rem] rounded-full bg-gray-200/50 blur-3xl -z-10" />
       <div className="absolute -bottom-48 -right-48 w-[36rem] h-[36rem] rounded-full bg-primary/10 blur-3xl -z-10" />
 
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+      <div className="container-app">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-10 xl:gap-16 items-center">
           {/* LEFT */}
           <motion.div
             variants={container}
@@ -92,7 +92,7 @@ const Home = () => {
             <motion.h1
               variants={item}
               className="mt-6 font-extrabold tracking-tight text-gray-900 leading-[1.02]
-                         text-4xl sm:text-5xl lg:text-[3.6rem] xl:text-[4rem]"
+                         text-4xl sm:text-5xl lg:text-[3.2rem] xl:text-[4rem]"
             >
               Hi, I'm <span className="text-primary inline-block">SakHak</span>
               <span className="block text-gray-900">Loeung</span>
@@ -100,7 +100,7 @@ const Home = () => {
 
             <motion.p
               variants={item}
-              className="mt-5 text-base md:text-lg text-gray-600 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+              className="mt-5 text-base md:text-lg lg:text-base xl:text-lg text-gray-600 max-w-xl mx-auto lg:mx-0 leading-relaxed"
             >
               I build modern web apps and craft clean visual content—combining
               code, design, and storytelling to create professional results.
@@ -108,7 +108,7 @@ const Home = () => {
 
             {/* Typewriter */}
             <motion.div variants={item} className="mt-7">
-              <div className="text-gray-700 text-lg md:text-xl">
+              <div className="text-gray-700 text-lg md:text-xl lg:text-lg xl:text-xl">
                 I'm a{" "}
                 <span className="relative inline-flex items-center font-semibold text-primary">
                   {text}
@@ -186,7 +186,7 @@ const Home = () => {
             {/* Stats - improved for laptop */}
             <motion.div
               variants={item}
-              className="mt-10 grid grid-cols-3 gap-3 max-w-lg mx-auto lg:mx-0"
+              className="mt-8 lg:mt-7 xl:mt-10 grid grid-cols-3 gap-3 max-w-lg mx-auto lg:mx-0"
             >
               {[
                 { k: "Projects", v: "15+" },
@@ -210,7 +210,7 @@ const Home = () => {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-5 flex justify-center lg:justify-end"
           >
-            <div className="relative w-full max-w-[26rem] lg:max-w-[30rem]">
+            <div className="relative w-full max-w-[26rem] lg:max-w-[25rem] xl:max-w-[30rem]">
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{
@@ -220,7 +220,7 @@ const Home = () => {
                 }}
                 className="relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white/60 backdrop-blur shadow-2xl"
               >
-                <div className="relative h-[22rem] sm:h-[26rem] lg:h-[30rem]">
+                <div className="relative h-[22rem] sm:h-[26rem] lg:h-[25.5rem] xl:h-[30rem]">
                   <img
                     src="/img/sakhakloeung.png"
                     alt="SakHak Profile"
@@ -255,7 +255,7 @@ const Home = () => {
                 initial={{ opacity: 0, x: -10, y: -6 }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 transition={{ delay: 0.25, duration: 0.5 }}
-                className="absolute -top-5 -left-5 rounded-2xl border border-gray-200 bg-white/80 backdrop-blur px-4 py-3 shadow-md"
+                className="absolute -top-4 -left-4 xl:-top-5 xl:-left-5 rounded-2xl border border-gray-200 bg-white/80 backdrop-blur px-4 py-3 shadow-md"
               >
                 <div className="text-xs text-gray-500">Currently learning</div>
                 <div className="text-sm font-bold text-gray-900">
@@ -267,7 +267,7 @@ const Home = () => {
                 initial={{ opacity: 0, x: 10, y: 8 }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 transition={{ delay: 0.35, duration: 0.5 }}
-                className="absolute -bottom-6 -right-6 rounded-2xl border border-gray-200 bg-white/80 backdrop-blur px-4 py-3 shadow-md hidden sm:block"
+                className="absolute -bottom-4 -right-4 xl:-bottom-6 xl:-right-6 rounded-2xl border border-gray-200 bg-white/80 backdrop-blur px-4 py-3 shadow-md hidden sm:block"
               >
                 <div className="text-xs text-gray-500">Open to</div>
                 <div className="text-sm font-bold text-gray-900">

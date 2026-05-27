@@ -6,6 +6,52 @@ const Portfolio = () => {
   const projects = useMemo(
     () => [
       {
+        title: "User Management System",
+        description:
+          "Developed a user management system with authentication, role assignment, and profile management for a school management platform.",
+        technologies: [
+          "React",
+          "TypeScript",
+          "Laravel",
+          "Sanctum",
+          "MySQL",
+          "Tailwind CSS",
+          "Axios",
+        ],
+        features: [
+          "Secure Laravel Sanctum authentication",
+          "Protected React dashboard routes",
+          "User listing, detail view, roles, and profiles",
+        ],
+        image: "/img/user_management.png",
+        live: "#",
+        github: "#",
+      },
+      {
+        title: "Construction Company Website and Admin Dashboard",
+        description:
+          "A complete full-stack web application for a construction company, combining a professional public website with an admin dashboard for managing dynamic content.",
+        technologies: [
+          "React",
+          "Vite",
+          "JavaScript",
+          "Laravel",
+          "Sanctum",
+          "MySQL",
+          "Bootstrap",
+          "Tailwind CSS",
+          "SCSS",
+        ],
+        features: [
+          "Responsive public website for services, projects, blogs, and contact details",
+          "Protected admin dashboard with CRUD management",
+          "Laravel REST API integration with image upload support",
+        ],
+        image: "/img/Construction.png",
+        live: "#",
+        github: "#",
+      },
+      {
         title: "Job Search Platform",
         description:
           "Full-stack web app with authentication, profiles, and job search by categories, location, and skills.",
@@ -29,24 +75,6 @@ const Portfolio = () => {
           "Web app to manage employee records with full CRUD, using arrays + localStorage for persistence.",
         technologies: ["HTML", "CSS", "JavaScript"],
         image: "/img/CrudSystem.jpg",
-        live: "#",
-        github: "#",
-      },
-      {
-        title: "Login UI Project",
-        description:
-          "Login form with validation, show/hide password, and basic error handling for a smooth UX.",
-        technologies: ["HTML", "CSS", "JavaScript"],
-        image: "/img/LoginForm.jpg",
-        live: "#",
-        github: "#",
-      },
-      {
-        title: "Login UI Project",
-        description:
-          "Login form with validation, show/hide password, and basic error handling for a smooth UX.",
-        technologies: ["HTML", "CSS", "JavaScript"],
-        image: "/img/LoginForm.jpg",
         live: "#",
         github: "#",
       },
@@ -127,6 +155,22 @@ const Portfolio = () => {
               </div>
             </div>
 
+            {current.features && (
+              <div className="mt-6">
+                <div className="text-sm font-semibold text-gray-900">
+                  Key Features
+                </div>
+                <ul className="mt-3 space-y-2 text-sm text-gray-700">
+                  {current.features.map((feature) => (
+                    <li key={feature} className="flex gap-2">
+                      <i className="bx bx-check-circle text-primary text-lg -mt-0.5" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <a
                 className="btn-primary"
@@ -153,7 +197,7 @@ const Portfolio = () => {
             <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
               {projects.map((p, idx) => (
                 <button
-                  key={p.title}
+                  key={`${p.title}-${idx}`}
                   onClick={() => setActive(idx)}
                   className={`relative overflow-hidden rounded-xl border transition ${
                     idx === active
@@ -184,7 +228,7 @@ const Portfolio = () => {
                   key={current.image}
                   src={current.image}
                   alt={current.title}
-                  className="w-full h-[18rem] md:h-[28rem] object-cover"
+                  className="w-full h-[18rem] md:h-[24rem] xl:h-[28rem] object-cover"
                   initial={{ opacity: 0, scale: 1.02 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.985 }}
