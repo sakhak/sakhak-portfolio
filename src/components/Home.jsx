@@ -125,7 +125,7 @@ const Home = () => {
               className="mt-8 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"
             >
               <a
-                href="img/SAKHAK LOEUNG CV2.pdf"
+                href="img/Loeung Sakhak.pdf"
                 download
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-white font-semibold shadow-lg shadow-primary/20 hover:brightness-110 active:scale-[0.99] transition"
               >
