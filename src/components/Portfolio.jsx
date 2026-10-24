@@ -25,7 +25,7 @@ const Portfolio = () => {
         ],
         image: "/img/user_management.png",
         live: "#",
-        github: "#",
+        github: "https://github.com/sakhak/SchoolManagementSystem-RBAC",
       },
       {
         title: "Construction Company Website and Admin Dashboard",
@@ -67,7 +67,7 @@ const Portfolio = () => {
         technologies: ["React", "JavaScript", "Laravel", "MySQL"],
         image: "/img/basic system.jpg",
         live: "#",
-        github: "#",
+        github: "https://github.com/sakhak/Authentication-CRUD-System",
       },
       {
         title: "Employee CRUD",
@@ -76,10 +76,10 @@ const Portfolio = () => {
         technologies: ["HTML", "CSS", "JavaScript"],
         image: "/img/CrudSystem.jpg",
         live: "#",
-        github: "#",
+        github: "https://github.com/sakhak/Crud-Employee",
       },
     ],
-    []
+    [],
   );
 
   const [active, setActive] = useState(0);

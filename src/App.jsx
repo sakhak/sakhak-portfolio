@@ -9,6 +9,13 @@ import Contact from "./components/Contact";
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) return savedTheme;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  });
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -17,14 +24,23 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", theme === "dark");
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((currentTheme) => (currentTheme === "dark" ? "light" : "dark"));
+  };
+
   return (
     <>
       {loading && (
-        <div className="fixed inset-0 bg-white z-50 flex items-center justify-center">
+        <div className="fixed inset-0 bg-white dark:bg-gray-950 z-50 flex items-center justify-center">
           <div className="loader"></div>
         </div>
       )}
-      <Header />
+      <Header theme={theme} toggleTheme={toggleTheme} />
       <main
         className={
           loading ? "opacity-0" : "opacity-100 transition-opacity duration-300"
@@ -37,7 +53,7 @@ function App() {
         <Contact />
       </main>
 
-      <footer className="bg-dark text-white py-3 text-center ">
+      <footer className="bg-dark dark:bg-black text-white py-3 text-center ">
         <p>© 2024 Loeung SakHak. All rights reserved.</p>
       </footer>
     </>

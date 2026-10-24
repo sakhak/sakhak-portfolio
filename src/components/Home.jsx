@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const Home = () => {
   const roles = useMemo(
     () => ["Full-Stack Developer", "Graphic Designer", "Video Editor"],
-    []
+    [],
   );
 
   const [text, setText] = useState("");
@@ -80,14 +80,14 @@ const Home = () => {
             className="lg:col-span-7 text-center lg:text-left"
           >
             {/* Badge */}
-            <motion.div variants={item} className="inline-flex">
+            {/* <motion.div variants={item} className="inline-flex">
               <div className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white/70 backdrop-blur px-4 py-2 shadow-sm">
                 <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
                 <span className="text-sm text-gray-600">
                   Available for freelance & collaborations
                 </span>
               </div>
-            </motion.div>
+            </motion.div> */}
 
             <motion.h1
               variants={item}
@@ -257,13 +257,13 @@ const Home = () => {
                 transition={{ delay: 0.25, duration: 0.5 }}
                 className="absolute -top-4 -left-4 xl:-top-5 xl:-left-5 rounded-2xl border border-gray-200 bg-white/80 backdrop-blur px-4 py-3 shadow-md"
               >
-                <div className="text-xs text-gray-500">Currently learning</div>
+                <div className="text-xs text-gray-500">currently learning</div>
                 <div className="text-sm font-bold text-gray-900">
-                  React + UI Design
+                  Laravel, AWS
                 </div>
               </motion.div>
 
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0, x: 10, y: 8 }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 transition={{ delay: 0.35, duration: 0.5 }}
@@ -273,7 +273,7 @@ const Home = () => {
                 <div className="text-sm font-bold text-gray-900">
                   Freelance Projects
                 </div>
-              </motion.div>
+              </motion.div> */}
 
               {/* Glow */}
               <div className="absolute -inset-8 -z-10 rounded-[3rem] bg-gradient-to-tr from-primary/20 to-transparent blur-2xl" />

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Header = () => {
+const Header = ({ theme, toggleTheme }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [scrolled, setScrolled] = useState(false);
@@ -13,6 +13,17 @@ const Header = () => {
     { id: "portfolio", label: "Projects" },
     { id: "contact", label: "Contact" },
   ];
+
+  const ThemeToggle = ({ className = "" }) => (
+    <button
+      type="button"
+      onClick={toggleTheme}
+      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+      className={`inline-flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white/70 text-gray-800 backdrop-blur transition hover:bg-white dark:border-gray-700 dark:bg-gray-900/70 dark:text-gray-100 dark:hover:bg-gray-900 ${className}`}
+    >
+      <i className={`bx ${theme === "dark" ? "bx-sun" : "bx-moon"} text-xl`} />
+    </button>
+  );
 
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
@@ -39,7 +50,7 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 w-full z-[9999] transition ${
         scrolled
-          ? "bg-white/80 backdrop-blur border-b border-gray-200"
+          ? "bg-white/80 backdrop-blur border-b border-gray-200 dark:bg-gray-950/80 dark:border-gray-800"
           : "bg-transparent"
       }`}
     >
@@ -50,13 +61,14 @@ const Header = () => {
             e.preventDefault();
             scrollToSection("home");
           }}
-          className="flex items-center gap-2 font-extrabold tracking-tight text-gray-900"
+          className="flex items-center gap-2 font-extrabold tracking-tight text-gray-900 dark:text-gray-100"
         >
           <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-white shadow-sm">
             S
           </span>
           <span className="text-lg md:text-xl">
-            SakHak <span className="text-primary">Loeung</span>
+            <span className="brand-sakhak">SakHak</span>{" "}
+            <span className="text-primary">Loeung</span>
           </span>
         </a>
 
@@ -76,9 +88,10 @@ const Header = () => {
               {item.label}
             </a>
           ))}
+          <ThemeToggle className="ml-2" />
           <a
             href="#contact"
-            className="btn-soft ml-2"
+            className="btn-soft"
             onClick={(e) => {
               e.preventDefault();
               scrollToSection("contact");
@@ -89,15 +102,17 @@ const Header = () => {
           </a>
         </nav>
 
-        {/* Mobile button */}
-        <button
-          type="button"
-          className="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-xl border border-gray-200 bg-white/70 backdrop-blur"
-          onClick={() => setMenuOpen((v) => !v)}
-          aria-label="Open menu"
-        >
-          <i className={`bx ${menuOpen ? "bx-x" : "bx-menu"} text-2xl`} />
-        </button>
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            type="button"
+            className="inline-flex items-center justify-center w-11 h-11 rounded-xl border border-gray-200 bg-white/70 backdrop-blur dark:border-gray-700 dark:bg-gray-900/70 dark:text-gray-100"
+            onClick={() => setMenuOpen((v) => !v)}
+            aria-label="Open menu"
+          >
+            <i className={`bx ${menuOpen ? "bx-x" : "bx-menu"} text-2xl`} />
+          </button>
+        </div>
       </div>
 
       {/* Mobile Drawer */}
@@ -117,7 +132,7 @@ const Header = () => {
 
             {/* Drawer panel */}
             <motion.div
-              className="fixed top-16 left-0 right-0 md:hidden z-[9999] bg-white/95 backdrop-blur border-b border-gray-200"
+              className="fixed top-16 left-0 right-0 md:hidden z-[9999] bg-white/95 backdrop-blur border-b border-gray-200 dark:bg-gray-950/95 dark:border-gray-800"
               initial={{ y: -10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -10, opacity: 0 }}
